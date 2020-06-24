@@ -1,117 +1,232 @@
-
 body {
   max-width: 375px;
   width: 90%;
-  margin: auto;
+  margin: 4rem auto;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
+  background-color: hsl(240, 78%, 98%);
+
+}
+
+h1 {
+  color: hsl(233, 13%, 49%);
+}
+
+.monthlyPrice, .annualPrice {
+  font-size: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: hsl(232, 13%, 33%);
+}
+
+.purplePanel .monthlyPrice, .annualPrice {
+  color: white;
+}
+
+.dollarSign {
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+.features {
+  border-top: 1px hsl(234, 14%, 74%) solid;
+  width: 90%;
+  margin: auto;
+}
+
+.features:nth-of-type(3) {
+  border-bottom: 1px hsl(234, 14%, 74%) solid;
+}
+
+.features p {
+  margin: 1rem auto;
+}
+
+
+/* div containing switch for price changes*/
+.timeSwitch {
+  margin: 3rem auto 5rem;
+}
+
+.timeSwitch p {
+  color: hsl(234, 14%, 74%);
+  display: inline-block;
+  margin: 0;
 }
 
 .panel {
   width: 100%;
+  height: 450px;
+  background-color: white;
+  border-radius: 10px;
+  color: hsl(233, 13%, 49%);
+  box-sizing: border-box;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.purplePanel {
+  color: white;
+  background-image: Linear-gradient(to bottom right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+.hidden {
+  display: none;
 }
 
 /* Code taken from w3 schools https://www.w3schools.com/howto/howto_css_switch.asp*/
 /* The switch - the box around the slider */
 .switch {
- position: relative;
- display: inline-block;
- width: 60px;
- height: 34px;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  margin: 0 1rem;
 }
 
 /* Hide default HTML checkbox */
 .switch input {
- opacity: 0;
- width: 0;
- height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 /* The slider */
 .slider {
- position: absolute;
- cursor: pointer;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- background-color: #ccc;
- -webkit-transition: .4s;
- transition: .4s;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: Linear-gradient(to bottom right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 .slider:before {
- position: absolute;
- content: "";
- height: 26px;
- width: 26px;
- left: 4px;
- bottom: 4px;
- background-color: white;
- -webkit-transition: .4s;
- transition: .4s;
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-input:checked + .slider {
- background-color: #2196F3;
-}
-
-input:focus + .slider {
- box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
- -webkit-transform: translateX(26px);
- -ms-transform: translateX(26px);
- transform: translateX(26px);
+input:checked+.slider:before {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
 }
 
 /* Rounded sliders */
 .slider.round {
- border-radius: 34px;
+  border-radius: 34px;
 }
 
 .slider.round:before {
- border-radius: 50%;
+  border-radius: 50%;
 }
 /*End of code taken from w3 schools*/
 
-/* background swirly line images*/
-.top-img {
-  position: absolute;
-  top: 0px;
-  right: 0px;
+/*learn more buttons on product panels*/
+.learnMore {
+  width: 270px;
+  height: 45px;
+  cursor: pointer;
+  border: none;
+  border-radius: 7px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.15rem;
+  margin-top: 2rem;
 }
 
-.bottom-img {
+.whiteBtn {
+  background-image: Linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: white;
+}
+
+.purpleBtn {
+  background-color: white;
+  color: hsl(237, 63%, 64%);
+}
+
+
+/* background swirly line images*/
+.topImg {
+  position: absolute;
+  top: -40px;
+  right: -200px;
+  z-index: -1;
+}
+
+.bottomImg {
   display: none;
+  z-index: -1;
 }
 
 /*Footer attrubution*/
-  .attribution { font-size: 11px; text-align: center; }
-  .attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
 
-  @media screen and (min-width: 376px) {
-    body {
-      max-width: 1440px;
-      width: 80%;
-      margin: auto;
-      text-align: center;
-    }
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .panel {
-      width: 30%;
-    }
-    .bottom-img {
-      position: absolute;
-      bottom: 0px;
-      left: 0px;
-      display: inline-block;
-    }
+@media screen and (min-width: 376px) {
+  body {
+    max-width: 1440px;
+    width: 80%;
+    margin: auto;
+    text-align: center;
   }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .panel {
+  margin-top: auto;
+  margin-bottom: auto;
+  }
+
+  .purplePanel {
+    height: 500px;
+    padding-top: 2.5rem;
+  }
+
+  .whiteBtn:hover {
+    background-image: none;
+    background-color: white;
+    color: hsl(237, 63%, 64%);
+    border: 1px hsl(237, 63%, 64%) solid;
+  }
+
+  .purpleBtn:hover {
+    background-image: Linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: white;
+    border: 1px white solid;
+  }
+
+  .topImg {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -1;
+  }
+
+  .bottomImg {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    display: inline-block;
+  }
+}
